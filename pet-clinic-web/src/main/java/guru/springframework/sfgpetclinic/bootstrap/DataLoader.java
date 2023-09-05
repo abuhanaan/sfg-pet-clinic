@@ -3,10 +3,7 @@ package guru.springframework.sfgpetclinic.bootstrap;
 import guru.springframework.sgfpetclinic.model.Owner;
 import guru.springframework.sgfpetclinic.model.Vet;
 import guru.springframework.sgfpetclinic.services.OwnerService;
-import guru.springframework.sgfpetclinic.services.PetService;
 import guru.springframework.sgfpetclinic.services.VetService;
-import guru.springframework.sgfpetclinic.services.map.OwnerServiceMap;
-import guru.springframework.sgfpetclinic.services.map.VetServiceMap;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -17,9 +14,9 @@ public class DataLoader implements CommandLineRunner {
     public final VetService vetService;
 
 
-    public DataLoader() {
-        ownerService = new OwnerServiceMap();
-        vetService = new VetServiceMap();
+    public DataLoader(OwnerService ownerService, VetService vetService) {
+        this.ownerService = ownerService;
+        this.vetService = vetService;
     }
     @Override
     public void run(String... args) throws Exception {
@@ -48,7 +45,6 @@ public class DataLoader implements CommandLineRunner {
         vet2.setFirstName("Jessie");
         vet2.setLastName("Porter");
         vetService.save(vet2);
-
         System.out.println("Loaded Vets");
     }
 }
