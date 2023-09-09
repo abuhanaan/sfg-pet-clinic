@@ -1,7 +1,7 @@
-package guru.springframework.sgfpetclinic.services.map;
+package guru.springframework.sfgpetclinic.services.map;
 
-import guru.springframework.sgfpetclinic.model.Pet;
-import guru.springframework.sgfpetclinic.services.CrudService;
+import guru.springframework.sfgpetclinic.model.Pet;
+import guru.springframework.sfgpetclinic.services.CrudService;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
